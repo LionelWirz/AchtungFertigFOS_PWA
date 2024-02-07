@@ -2,6 +2,7 @@
 1. Struktur PWA verstehen
 2. Ordner Public mit Inhalt verstehen
 3. Dateien untereinander verlinken und die Funktionalität verstehen.
+4. Lighthouse in ChromeDevTools lernen um die PWA zu testen.
 
 # React + Vite
 
