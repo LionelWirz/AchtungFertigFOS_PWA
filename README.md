@@ -1,3 +1,8 @@
+2Do
+1. Struktur PWA verstehen
+2. Ordner Public mit Inhalt verstehen
+3. Dateien untereinander verlinken und die Funktionalität verstehen.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
