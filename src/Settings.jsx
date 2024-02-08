@@ -1,14 +1,13 @@
 // Settings.js
 import React, { useState } from 'react';
 
-function Settings({ onSetWorkDuration, onSetBreakDuration }) {
+function Settings({ onSetWorkDuration }) {
   const [workDuration, setWorkDuration] = useState(25);
-  const [breakDuration, setBreakDuration] = useState(5);
 
   return (
     <div>
       <label>
-        Duration:
+        Dauer:
         <input
           type="number"
           value={workDuration}
