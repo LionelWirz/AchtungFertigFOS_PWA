@@ -31,43 +31,47 @@ body {
   .controls {
     margin-top: 20px;
   }
-  
-  /* Update the button styling in .controls */
-.controls {
-  background-color: #00b5fd; /* Match the app's background for a seamless look */
-  color: #fff;
+
+  /* Base button styling */
+button {
   padding: 10px 20px;
   margin: 0 10px;
-  border: 2px solid #fff; /* Add a border to make the buttons stand out */
-  border-radius: 30px; /* More rounded corners to match the circular theme */
+  border: none;
+  border-radius: 5px; /* Rounded corners for a modern look */
   cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  font-weight: bold; /* Make text bold to stand out */
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif; /* Example: Roboto from Google Fonts */
+  text-transform: uppercase; /* Modern trend for button text */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Styling for buttons in .controls */
+.controls button {
+  background: linear-gradient(145deg, #007bff, #00b5fd);
+  color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16); /* Soft shadow for depth */
 }
 
 .controls button:hover {
-  background-color: #ffa500; /* A standout color for hover state */
-  transform: scale(1.05); /* Slight increase in size to indicate interactivity */
+  background: linear-gradient(145deg, #00b5fd, #007bff);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect */
 }
 
-/* Update the button styling in .settings for consistency */
+/* Styling for buttons in .settings for consistency */
 .settings button {
-  background-color: #333;
+  background: linear-gradient(145deg, #333, #555);
   color: #fff;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 30px; /* Consistent rounded corners */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  font-weight: bold; /* Consistency in font weight */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 .settings button:hover {
-  background-color: #555;
-  transform: scale(1.05);
+  background: linear-gradient(145deg, #555, #333);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 
-  
+
   .settings {
     margin-top: 20px;
   }
@@ -84,16 +88,6 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-  }
-  
-  .settings button {
-    background-color: #333;
-    color: #fff;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
   }
   
   .settings button:hover {
