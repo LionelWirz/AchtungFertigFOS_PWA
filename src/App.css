@@ -61,7 +61,7 @@ button {
 /* Styling for buttons in .settings for consistency */
 .settings button {
   background: linear-gradient(145deg, #333, #555);
-  color: #fff;
+  color: #101dcf;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
