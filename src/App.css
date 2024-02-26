@@ -1,33 +1,25 @@
 /* App.css */
 
-body { 
-    font-family: Calibri, sans-serif;
-    background-color: #00b5fd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-  }
-  
-  .container {
-    background-color: #00b5fd;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  .timer {
-    font-size: 2rem;
-    margin-top: 20px;
-    color: #333;
-  }
-  
+body {
+  font-family: 'Digital-7 Mono', sans-serif; /* Use a digital style font */
+  background-color: #2C3E50; /* Black background */
+  color: #AED6F1; /* Light blue text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.timer {
+  font-size: 2.5rem; /* Adjust the font size for the timer */
+  margin-top: 20px;
+}
+
   .controls {
     margin-top: 20px;
   }
@@ -93,4 +85,4 @@ button {
   .settings button:hover {
     background-color: #555;
   }
-  
+

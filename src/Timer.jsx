@@ -1,14 +1,24 @@
 // Timer.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Timer({ time, isRunning }) {
-  const totalTime = 1500; // Adjust based on actual total time
-  const circumference = 2 * Math.PI * 45; // Example for a circle with radius 45
-  const timeFraction = time / totalTime;
-  const offset = circumference * (1 - timeFraction);
-  const minutes = Math.floor(time / 60);
-  const seconds = time % 60;
-  const formattedTime = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  const [percentageRemaining, setPercentageRemaining] = useState(100);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPercentageRemaining((time / 1500) * 100); // Assuming 1500 seconds for 25 minutes
+    }, 1000); // Update every second
+
+    return () => clearInterval(interval);
+  }, [time]);
+
+  // Function to format time in HH:MM:SS format
+  const formatTime = (timeInSeconds) => {
+    const hours = Math.floor(timeInSeconds / 3600);
+    const minutes = Math.floor((timeInSeconds % 3600) / 60);
+    const seconds = timeInSeconds % 60;
+    return `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+  };
 
   return (
     <div className="container">
@@ -18,37 +28,27 @@ function Timer({ time, isRunning }) {
           cy="100"
           r="90"
           fill="none"
-          stroke="#ccc"
+          stroke="#AED6F1" // Light blue color for the circle
           strokeWidth="10"
         />
+        {/* Animated circle representing the remaining time */}
         <circle
           cx="100"
           cy="100"
           r="90"
           fill="none"
-          stroke="#ffa500"
+          stroke="#2C3E50" // Black background color
           strokeWidth="10"
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
+          strokeDasharray="565.48" // Circumference of the circle (2 * π * radius)
+          strokeDashoffset={(100 - percentageRemaining) / 100 * 565.48} // Offset to show remaining time
           transform="rotate(-90 100 100)"
         />
-        <text
-          x="100"
-          y="105" // Adjust y for better vertical alignment
-          textAnchor="middle"
-          fill="#333"
-          fontSize="20"
-          fontFamily="Calibri, sans-serif"
-        >
-          {formattedTime}
-        </text>
       </svg>
-      <div className="controls">
-        {/* Controls here */}
+      {/* Remaining time */}
+      <div className="timer">
+        {formatTime(time)}
       </div>
-      <div className="settings">
-        {/* Settings here */}
-      </div>
+      {/* Controls and Settings */}
     </div>
   );
 }
