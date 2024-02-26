@@ -6,6 +6,7 @@ import Settings from './Settings';
 
 function App() {
   const [time, setTime] = useState(1500); // Initial time in seconds (25 minutes)
+  const [workDuration, setWorkDuration] = useState(1500); // Initial work duration in seconds
   const [isRunning, setIsRunning] = useState(false);
 
   useEffect(() => {
@@ -38,15 +39,12 @@ function App() {
 
   const handleReset = () => {
     setIsRunning(false);
-    setTime(1500); // Reset to the initial time
+    setTime(workDuration); // Reset to the work duration
   };
 
   const handleSetWorkDuration = (duration) => {
-    // Handle setting work duration
-  };
-
-  const handleSetBreakDuration = (duration) => {
-    // Handle setting break duration
+    setWorkDuration(duration); // Update the work duration
+    setTime(duration); // Reset timer when work duration is updated
   };
 
   return (
@@ -55,11 +53,9 @@ function App() {
       <Controls onStart={handleStart} onPause={handlePause} onReset={handleReset} />
       <Settings
         onSetWorkDuration={handleSetWorkDuration}
-        onSetBreakDuration={handleSetBreakDuration}
       />
     </div>
   );
 }
-
 
 export default App;
