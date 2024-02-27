@@ -20,11 +20,11 @@ body {
   margin-top: 20px;
 }
 
-  .controls {
-    margin-top: 20px;
-  }
+.controls {
+  margin-top: 20px;
+}
 
-  /* Base button styling */
+/* Base button styling */
 button {
   padding: 10px 20px;
   margin: 0 10px;
@@ -63,26 +63,17 @@ button {
   transform: translateY(-2px);
 }
 
+/* Styling for the circles */
+circle {
+  transition: stroke-dashoffset 0.5s ease-in-out; /* Smooth transition for the stroke-dashoffset */
+}
 
-  .settings {
-    margin-top: 20px;
-  }
-  
-  .settings label {
-    display: block;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .settings input {
-    width: 100px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  .settings button:hover {
-    background-color: #555;
-  }
+/* Light blue color for the circle representing remaining time */
+.remaining-circle {
+  stroke: #AED6F1;
+}
 
+/* Black color for the circle representing the background */
+.background-circle {
+  stroke: #2C3E50;
+}
