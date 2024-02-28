@@ -77,3 +77,6 @@ circle {
 .background-circle {
   stroke: #2C3E50;
 }
+.remaining-circle {
+  stroke: #2ecc71; /* Change the stroke color to green */
+}
