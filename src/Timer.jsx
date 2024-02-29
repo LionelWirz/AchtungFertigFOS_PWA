@@ -7,7 +7,9 @@ function Timer({ time, isRunning }) {
   useEffect(() => {
     const interval = setInterval(() => {
       if (isRunning) {
-        setPercentageRemaining((time / 1500) * 100); // Assuming 1500 seconds for 25 minutes
+        const remainingTime = time / 1000; // Convert milliseconds to seconds
+        const elapsedTime = 1500 - remainingTime; // Assuming 1500 seconds for 25 minutes
+        setPercentageRemaining((elapsedTime / 1500) * 100);
       }
     }, 1000); // Update every second
 
@@ -24,30 +26,30 @@ function Timer({ time, isRunning }) {
 
   return (
     <div className="container">
-      <svg width="200" height="200" viewBox="0 0 200 200">
+      <svg width="300" height="300" viewBox="0 0 300 300">
         <circle
-          cx="100"
-          cy="100"
-          r="90"
+          cx="150"
+          cy="150"
+          r="120"
           fill="none"
-          stroke="#AED6F1" // Light blue color for the circle
+          stroke="#AED6F1"
           strokeWidth="10"
-          className="remaining-circle" // Add class name for remaining time circle
+          className="remaining-circle"
         />
         <circle
-          cx="100"
-          cy="100"
-          r="90"
+          cx="150"
+          cy="150"
+          r="120"
           fill="none"
-          stroke="#2C3E50" // Black background color
+          stroke="#2ecc71" // Change the stroke color to green
           strokeWidth="10"
-          strokeDasharray="565.48" // Circumference of the circle (2 * π * radius)
-          strokeDashoffset={(100 - percentageRemaining) / 100 * 565.48} // Offset to show remaining time
-          transform="rotate(-90 100 100)"
-          className="background-circle" // Add class name for background circle
+          strokeDasharray="753.98"
+          strokeDashoffset={(100 - percentageRemaining) / 100 * 753.98}
+          transform="rotate(-90 150 150)"
+          className="background-circle"
         />
-        <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fill="#ffffff" fontSize="40" fontFamily="Digital-7, sans-serif">
-          {formatTime(time)}
+        <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fill="#ffffff" fontSize="60" fontFamily="'Digital-7', sans-serif">
+          {formatTime(time / 1000)}
         </text>
       </svg>
     </div>
