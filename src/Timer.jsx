@@ -5,13 +5,25 @@ function Timer({ time, isRunning }) {
   const [percentageRemaining, setPercentageRemaining] = useState(100);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (isRunning) {
-        const remainingTime = time / 1000; // Convert milliseconds to seconds
-        const elapsedTime = 1500 - remainingTime; // Assuming 1500 seconds for 25 minutes
-        setPercentageRemaining((elapsedTime / 1500) * 100);
-      }
-    }, 1000); // Update every second
+    let interval;
+
+    if (isRunning) {
+      const startTime = Date.now();
+      
+      interval = setInterval(() => {
+        const elapsedTime = Date.now() - startTime;
+        const remainingTime = time - elapsedTime;
+
+        if (remainingTime > 0) {
+          setPercentageRemaining((remainingTime / time) * 100);
+        } else {
+          setPercentageRemaining(0);
+          clearInterval(interval);
+        }
+      }, 1000); // Update every second
+    } else {
+      clearInterval(interval);
+    }
 
     return () => clearInterval(interval);
   }, [time, isRunning]);
@@ -49,7 +61,7 @@ function Timer({ time, isRunning }) {
           className="background-circle"
         />
         <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fill="#ffffff" fontSize="60" fontFamily="'Digital-7', sans-serif">
-          {formatTime(time / 1000)}
+          {formatTime(Math.ceil(time / 1000))}
         </text>
       </svg>
     </div>
