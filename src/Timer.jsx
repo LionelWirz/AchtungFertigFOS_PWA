@@ -28,14 +28,6 @@ function Timer({ time, isRunning }) {
     return () => clearInterval(interval);
   }, [time, isRunning]);
 
-  // Function to format time in HH:MM:SS format
-  const formatTime = (timeInSeconds) => {
-    const hours = Math.floor(timeInSeconds / 3600);
-    const minutes = Math.floor((timeInSeconds % 3600) / 60);
-    const seconds = timeInSeconds % 60;
-    return `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-  };
-
   return (
     <div className="container">
       <svg width="300" height="300" viewBox="0 0 300 300">
@@ -67,5 +59,14 @@ function Timer({ time, isRunning }) {
     </div>
   );
 }
+
+// Function to format time in HH:MM:SS format
+const formatTime = (timeInSeconds) => {
+  const hours = Math.floor(timeInSeconds / 3600);
+  const minutes = Math.floor((timeInSeconds % 3600) / 60);
+  const seconds = timeInSeconds % 60;
+  return `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+};
+
 
 export default Timer;
