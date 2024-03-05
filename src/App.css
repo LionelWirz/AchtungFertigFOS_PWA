@@ -1,88 +1,38 @@
 /* App.css */
-
-body {
-  font-family: 'Digital-7 Mono', sans-serif;
-  background-color: #2C3E50;
-  color: #AED6F1;
+body, html {
   display: flex;
-  flex-direction: column; /* Align components vertically */
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100%;
   margin: 0;
 }
 
-.container {
-  text-align: center;
-  margin-top: 40px; /* Increase margin to create more space */
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .timer {
-  font-size: 2.5rem;
-  margin-top: 20px;
+  font-size: 48px;
 }
 
 .controls {
   margin-top: 20px;
-  display: flex;
-  flex-direction: row; /* Align buttons horizontally */
-  justify-content: center; /* Align buttons in the center */
 }
 
-/* Base button styling */
 button {
+  margin: 0 10px;
   padding: 10px 20px;
-  margin: 10px; /* Add margin around buttons */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
+  font-size: 16px;
 }
 
-/* Styling for buttons in .controls */
-.controls button {
-  background: linear-gradient(145deg, #007bff, #00b5fd);
-  color: #fff;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+.input-container {
+  margin-top: 20px;
 }
 
-.controls button:hover {
-  background: linear-gradient(145deg, #00b5fd, #007bff);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
-}
-
-/* Styling for buttons in .settings for consistency */
-.settings button {
-  background: linear-gradient(145deg, #333, #555);
-  color: #101dcf;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-}
-
-.settings button:hover {
-  background: linear-gradient(145deg, #555, #333);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
-}
-
-/* Styling for the circles */
-circle {
-  transition: stroke-dashoffset 0.5s ease-in-out;
-}
-
-/* Light blue color for the circle representing remaining time */
-.remaining-circle {
-  stroke: #AED6F1;
-}
-
-/* Black color for the circle representing the background */
-.background-circle {
-  stroke: #2C3E50;
-}
-
-.remaining-circle {
-  stroke: #2ecc71; /* Change the stroke color to green */
+input {
+  padding: 10px;
+  font-size: 16px;
 }
