@@ -1,4 +1,3 @@
-
 // App.js
 import React, { useState, useEffect } from 'react';
 import Timer from './Timer';
@@ -17,8 +16,7 @@ function App() {
           if (prevTime > 0) {
             return prevTime - 1;
           } else {
-            setIsRunning(false);
-            clearInterval(interval);
+            handleFinish();
             return 0;
           }
         });
@@ -31,11 +29,7 @@ function App() {
   }, [isRunning]);
 
   const handleToggle = () => {
-    if (isRunning) {
-      setIsRunning(false); // Pause the timer
-    } else {
-      setIsRunning(true); // Start the timer
-    }
+    setIsRunning((prevIsRunning) => !prevIsRunning);
   };
 
   const handleReset = () => {
@@ -47,9 +41,29 @@ function App() {
     setInputValue(e.target.value);
   };
 
+  const handleFinish = () => {
+    showNotification();
+    setIsRunning(false);
+  };
+
   const parseTime = (input) => {
     const [hours, minutes, seconds] = input.split(':').map(Number);
     return hours * 3600 + minutes * 60 + seconds; // Convert hours, minutes, and seconds to seconds
+  };
+
+  const showNotification = () => {
+    if (Notification.permission === 'granted') {
+      new Notification('Countdown Finished!', {
+        body: 'Your countdown has finished.',
+        icon: '/notification-icon.png' // Replace with your notification icon
+      });
+    } else if (Notification.permission !== 'denied') {
+      Notification.requestPermission().then((permission) => {
+        if (permission === 'granted') {
+          showNotification();
+        }
+      });
+    }
   };
 
   return (
