@@ -41,14 +41,22 @@ const Doomsday = () => {
 
   return (
     <div className="app">
-      <h1>Countdown to 11. Klasse Exams</h1>
-      <div className="time">{renderTimeLeft(timeLeft11)}</div>
-      <h1>Countdown to 12. Klasse Exams</h1>
-      <div className="time">{renderTimeLeft(timeLeft12)}</div>
-      <h1>Countdown to 10. Klasse Exams</h1>
-      <div className="time">{renderTimeLeft(timeLeft10)}</div>
+      <h1>Doomsday Clock</h1>
+      <div className="class-row">
+        <div className="class-label">10. Klasse:</div>
+        <div className="time">{renderTimeLeft(timeLeft10)}</div>
+      </div>
+      <div className="class-row">
+        <div className="class-label">11. Klasse:</div>
+        <div className="time">{renderTimeLeft(timeLeft11)}</div>
+      </div>
+      <div className="class-row">
+        <div className="class-label">12. Klasse:</div>
+        <div className="time">{renderTimeLeft(timeLeft12)}</div>
+      </div>
     </div>
   );
+  
 };
 
 export default Doomsday;

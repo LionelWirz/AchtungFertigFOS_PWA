@@ -1,4 +1,13 @@
 /* App.css */
+
+body {
+  font-family: 'Arial', sans-serif; /* Arial is a common sans-serif font */
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+}
+
 body, html {
   display: flex;
   justify-content: center;
@@ -35,4 +44,63 @@ button {
 input {
   padding: 10px;
   font-size: 16px;
+}
+
+.class-row {
+  display: flex;
+  align-items: center; /* Aligns items vertically center */
+  margin-bottom: 10px; /* Adds spacing below each row */
+}
+
+.class-label {
+  margin-right: 10px; /* Adds some space between the label and the time */
+}
+
+/* Sets the overall background and default text colors */
+body {
+  background-color: black; /* Dark background */
+  color: #00FF00; /* Bright green text, similar to the Matrix theme */
+  font-family: 'Roboto', sans-serif; /* Optional: if using a custom font like Roboto */
+}
+
+/* Specific adjustments for headers and time display to ensure visibility */
+h1, .time, .class-label {
+  color: #00FF00; /* Ensures that these elements are also green */
+}
+
+/* Enhance the matrix-like feel */
+.class-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.class-label {
+  margin-right: 10px;
+}
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
+}
+
+.modal-container {
+  border: 1px solid #00FF00; /* Adds a green border to modal for effect */
+}
+
+.modal-close-button {
+  color: #00FF00;
+  background: none;
+  border: none;
+}
+
+input {
+  background-color: #000;
+  color: #00FF00;
+  border: 1px solid #00FF00;
+}
+
+button {
+  background-color: #222; /* Darker background for buttons */
+  color: #00FF00;
+  border: 1px solid #00FF00;
 }

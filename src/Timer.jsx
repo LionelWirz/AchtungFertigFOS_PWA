@@ -45,10 +45,22 @@ function Timer({ time, setTime, inputValue, setInputValue, isRunning, setIsRunni
     return hours * 3600 + minutes * 60 + seconds;
   };
 
+  // Helper function to convert seconds into HH:MM:SS format
+  const formatTime = (time) => {
+    const hours = Math.floor(time / 3600);
+    const minutes = Math.floor((time % 3600) / 60);
+    const seconds = time % 60;
+
+    return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+  };
+
+  // Helper function to pad numbers with leading zeros if needed
+  const pad = (num) => num.toString().padStart(2, '0');
+
   return (
     <div className="timer">
-      <h1>Timer</h1>
-      <div className="time-display">{time}s</div>
+      <h3>AchtungFertigFOS</h3>
+      <div className="time-display">{formatTime(time)}</div>
       <div className="controls">
         <button onClick={handleToggle}>
           {isRunning ? 'Pause' : 'Start'}
