@@ -1,6 +1,6 @@
-// App.js
 import React, { useState, useEffect } from 'react';
 import Timer from './Timer';
+import Doomsday from './Doomsday';
 
 function App() {
   const [time, setTime] = useState(1500); // Initial time in seconds (25 minutes)
@@ -67,7 +67,8 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <div className="App">
+      <Doomsday />
       <Timer time={time} />
       <div className="controls">
         <button onClick={handleToggle}>
